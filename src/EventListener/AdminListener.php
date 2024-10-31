@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Sylius package.
+ *
+ * (c) Sylius Sp. z o.o.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace App\EventListener;
 
 use Sylius\Component\Core\Model\AdminUserInterface;
@@ -8,7 +17,7 @@ use Symfony\Component\HttpFoundation\File\Exception\UnexpectedTypeException;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-final class AdminListener
+final readonly class AdminListener
 {
     public function __construct(private RequestStack $requestStack)
     {
@@ -40,7 +49,7 @@ final class AdminListener
      */
     public function preUpdate(GenericEvent $event): void
     {
-        $subject = $subject = $event->getSubject();
+        $subject = $event->getSubject();
 
         if (!$subject instanceof AdminUserInterface) {
             throw new UnexpectedTypeException($subject, AdminUserInterface::class);
