@@ -16,7 +16,7 @@
 /phpspec.yml
 
 /drivers/
-/private/invoices
+private/invoices/
 
 /bin/*
 !/bin/console
