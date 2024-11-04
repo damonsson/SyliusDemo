@@ -1,22 +1,22 @@
 sylius_ui:
-    events:
-        sylius.shop.layout.header:
-            blocks:
-                after_menu:
-                    template: "Blocks/_infoBox.html.twig"
-                    priority: 12
-        sylius.shop.layout.head:
-            blocks:
-                analistics:
-                    template: "Blocks/_analytics.html.twig"
-                    priority: 10
-        sylius.admin.login.content:
-            blocks:
-                info_box:
-                    template: "Blocks/_infoBox.html.twig"
-                    priority: 0
-        sylius.admin.layout.topbar_right:
-            blocks:
-                info_box:
-                    template: "Blocks/_infoBox.html.twig"
-                    priority: 0
+#    events:
+#        sylius.shop.layout.header:
+#            blocks:
+#                after_menu:
+#                    template: "Blocks/_infoBox.html.twig"
+#                    priority: 12
+#        sylius.shop.layout.head:
+#            blocks:
+#                analistics:
+#                    template: "Blocks/_analytics.html.twig"
+#                    priority: 10
+#        sylius.admin.login.content:
+#            blocks:
+#                info_box:
+#                    template: "Blocks/_infoBox.html.twig"
+#                    priority: 0
+#        sylius.admin.layout.topbar_right:
+#            blocks:
+#                info_box:
+#                    template: "Blocks/_infoBox.html.twig"
+#                    priority: 0
