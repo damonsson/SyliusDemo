@@ -12,25 +12,13 @@ use Sylius\Component\Core\Model\AdminUser;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Webmozart\Assert\Assert;
 
-final class ManagingAdministratorsContext implements Context
+final readonly class ManagingAdministratorsContext implements Context
 {
-    /** @var NotificationCheckerInterface */
-    private $notificationChecker;
-
-    /** @var RepositoryInterface */
-    private $adminUserRepository;
-
-    /** @var UpdatePageInterface */
-    private $adminUserUpdatePage;
-
     public function __construct(
-        NotificationCheckerInterface $notificationChecker,
-        RepositoryInterface $adminUserRepository,
-        UpdatePageInterface $adminUserUpdatePage
+        private NotificationCheckerInterface $notificationChecker,
+        private RepositoryInterface $adminUserRepository,
+        private UpdatePageInterface $adminUserUpdatePage
     ) {
-        $this->notificationChecker = $notificationChecker;
-        $this->adminUserRepository = $adminUserRepository;
-        $this->adminUserUpdatePage = $adminUserUpdatePage;
     }
 
     /**

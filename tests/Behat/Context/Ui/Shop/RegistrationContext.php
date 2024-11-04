@@ -12,25 +12,13 @@ use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Webmozart\Assert\Assert;
 
-final class RegistrationContext implements Context
+final readonly class RegistrationContext implements Context
 {
-    /** @var NotificationCheckerInterface */
-    private $notificationChecker;
-
-    /** @var UrlGeneratorInterface */
-    private $urlGenerator;
-
-    /** @var RepositoryInterface */
-    private $shopUserRepository;
-
     public function __construct(
-        NotificationCheckerInterface $notificationChecker,
-        UrlGeneratorInterface $urlGenerator,
-        RepositoryInterface $shopUserRepository
+        private NotificationCheckerInterface $notificationChecker,
+        private UrlGeneratorInterface $urlGenerator,
+        private RepositoryInterface $shopUserRepository
     ) {
-        $this->notificationChecker = $notificationChecker;
-        $this->urlGenerator = $urlGenerator;
-        $this->shopUserRepository = $shopUserRepository;
     }
 
     /**
@@ -48,7 +36,10 @@ final class RegistrationContext implements Context
         );
 
         $this->notificationChecker->checkNotification(
-            sprintf('For demo purposes you can visit https://127.0.0.1:8080%s to verify the account.', $verificationLink),
+            sprintf(
+                'For demo purposes you can visit https://127.0.0.1:8080%s to verify the account.',
+                $verificationLink
+            ),
             NotificationType::success()
         );
     }

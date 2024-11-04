@@ -76,7 +76,6 @@ default:
             contexts:
                 - sylius.behat.context.hook.doctrine_orm
                 - sylius.behat.context.hook.mailer
-                - Sylius\Calendar\Tests\Behat\Context\Hook\CalendarContext
                 - Tests\Sylius\InvoicingPlugin\Behat\Context\Hook\InvoicesContext
 
                 - sylius.behat.context.setup.admin_security
@@ -97,7 +96,6 @@ default:
                 - sylius.behat.context.setup.taxonomy
                 - sylius.behat.context.setup.user
                 - sylius.behat.context.setup.zone
-                - Sylius\Calendar\Tests\Behat\Context\Setup\CalendarContext
 
                 - sylius.behat.context.transform.address
                 - sylius.behat.context.transform.channel
