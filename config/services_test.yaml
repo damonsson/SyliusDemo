@@ -1,6 +1,5 @@
 imports:
     - { resource: "../tests/Behat/Resources/config/services.xml" }
-    - { resource: "../vendor/sylius/calendar/tests/Behat/Resources/services.yaml" }
     - { resource: "../vendor/sylius/invoicing-plugin/tests/Behat/Resources/services.xml" }
     - { resource: "../vendor/sylius/sylius/src/Sylius/Behat/Resources/config/services.xml" }
 
