@@ -17,7 +17,7 @@ Feature: Filtering orders by products
         And the customer chose "Free" shipping method to "United States" with "Offline" payment
         And I am logged in as an administrator
 
-    @ui @javascript
+    @ui @mink:chromedriver
     Scenario: Filtering orders by product
         When I browse orders
         And I filter by product "Galaxy T-Shirt"

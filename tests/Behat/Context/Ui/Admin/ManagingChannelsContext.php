@@ -9,18 +9,12 @@ use Sylius\Behat\NotificationType;
 use Sylius\Behat\Page\Admin\Crud\CreatePageInterface;
 use Sylius\Behat\Service\NotificationCheckerInterface;
 
-final class ManagingChannelsContext implements Context
+final readonly class ManagingChannelsContext implements Context
 {
-    /** @var CreatePageInterface */
-    private $channelCreatePage;
-
-    /** @var NotificationCheckerInterface */
-    private $notificationChecker;
-
-    public function __construct(CreatePageInterface $channelCreatePage, NotificationCheckerInterface $notificationChecker)
-    {
-        $this->channelCreatePage = $channelCreatePage;
-        $this->notificationChecker = $notificationChecker;
+    public function __construct(
+        private CreatePageInterface $channelCreatePage,
+        private NotificationCheckerInterface $notificationChecker
+    ) {
     }
 
     /**

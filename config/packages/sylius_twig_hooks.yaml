@@ -1,0 +1,31 @@
+sylius_twig_hooks:
+    hooks:
+        'sylius_shop.base.offcanvas':
+            info_box:
+                template: "info_box.html.twig"
+                priority: 100
+
+        'sylius_admin.security.login':
+            info_box:
+                template: "info_box.html.twig"
+                priority: 100
+
+        'sylius_admin.security.login.content':
+            info_box:
+                template: "admin_demo_credentials.html.twig"
+                priority: 150
+
+        'sylius_admin.common.index':
+            info_box:
+                template: "info_box.html.twig"
+                priority: 100
+
+        'sylius_shop.base#javascripts':
+            analytics:
+                template: "analytics.html.twig"
+                priority: 100
+
+        'sylius_shop.account.login.content.login_container':
+            analytics:
+                template: "shop_demo_credentials.html.twig"
+                priority: 150

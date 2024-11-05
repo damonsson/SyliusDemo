@@ -3,7 +3,7 @@
 /*
  * This file is part of the Sylius package.
  *
- * (c) Paweł Jędrzejewski
+ * (c) Sylius Sp. z o.o.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,26 +16,10 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class VerificationFlashMessageGenerator implements FlashMessageGeneratorInterface
 {
-    /**
-     * @var UrlGeneratorInterface
-     */
-    private $urlGenerator;
-
-    /**
-     * @var TranslatorInterface
-     */
-    private $translator;
-
-    /**
-     * @param UrlGeneratorInterface $urlGenerator
-     * @param TranslatorInterface $translator
-     */
     public function __construct(
-        UrlGeneratorInterface $urlGenerator,
-        TranslatorInterface $translator
+        private readonly UrlGeneratorInterface $urlGenerator,
+        private readonly TranslatorInterface $translator
     ) {
-        $this->urlGenerator = $urlGenerator;
-        $this->translator = $translator;
     }
 
     /**
@@ -48,10 +32,8 @@ final class VerificationFlashMessageGenerator implements FlashMessageGeneratorIn
             ->generate('sylius_shop_user_verification', ['token' => $token], UrlGeneratorInterface::ABSOLUTE_URL)
         ;
 
-        $message = $this->translator->trans('sylius_demo.verification_link_flash', [
+        return $this->translator->trans('sylius_demo.verification_link_flash', [
             '%url%' => $url,
         ]);
-
-        return $message;
     }
 }

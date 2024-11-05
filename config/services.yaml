@@ -25,11 +25,5 @@ services:
         class: App\Generator\VerificationFlashMessageGenerator
         arguments: ['@router', '@translator.default']
 
-    App\Twig\LocaleExtension:
-        class: App\Twig\LocaleExtension
-        arguments: ['@Twig\Extra\Intl\IntlExtension']
-        tags:
-            - {name: twig.extension}
-
     sylius.http_client:
         class: GuzzleHttp\Client
