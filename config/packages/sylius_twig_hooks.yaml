@@ -10,7 +10,7 @@ sylius_twig_hooks:
                 template: "info_box.html.twig"
                 priority: 100
 
-        'sylius_admin.security.login.content':
+        'sylius_admin.security.login.page.content':
             info_box:
                 template: "admin_demo_credentials.html.twig"
                 priority: 150
