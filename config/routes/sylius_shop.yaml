@@ -10,6 +10,12 @@ sylius_shop_default_locale:
     defaults:
         _controller: sylius_shop.controller.locale_switch::switchAction
 
+sylius_shop_payum:
+    resource: "@SyliusPayumBundle/Resources/config/routing/integrations/sylius_shop.yaml"
+
+sylius_payment_notify:
+    resource: "@SyliusPaymentBundle/Resources/config/routing/integrations/sylius.yaml"
+
 #sylius_paypal:
 #    resource: "@SyliusPayPalPlugin/Resources/config/shop_routing.yaml"
 #    prefix: /{_locale}
