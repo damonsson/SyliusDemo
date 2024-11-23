@@ -21,8 +21,13 @@ sylius_twig_hooks:
                 priority: 100
 
         'sylius_shop.base#javascripts':
-            analytics:
+            info_box:
                 template: "analytics.html.twig"
+                priority: 100
+
+        'sylius_shop.base#stylesheets':
+            override:
+                template: "css_override.html.twig"
                 priority: 100
 
         'sylius_shop.account.login.content.login_container':
