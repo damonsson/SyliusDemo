@@ -21,7 +21,7 @@ sylius_twig_hooks:
                 priority: 100
 
         'sylius_shop.base#javascripts':
-            info_box:
+            analytics:
                 template: "analytics.html.twig"
                 priority: 100
 
