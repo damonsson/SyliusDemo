@@ -1,2 +1,3 @@
 sylius_demo:
     verification_link_flash: 'For demo purposes you can visit %url% to verify the account.'
+    meta_description: 'Explore the Sylius – a flexible e-commerce platform built on Symfony. Discover features to customize your online store and test its capabilities!'
