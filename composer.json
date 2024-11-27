@@ -25,7 +25,10 @@
         "symfony/flex": "^2.4",
         "sylius/invoicing-plugin": "2.0.x-dev",
         "bugsnag/bugsnag-symfony": "^1.7",
-        "nyholm/psr7": "^1.8"
+        "nyholm/psr7": "^1.8",
+        "symfony/runtime": "*",
+        "runtime/frankenphp-symfony": "*",
+        "symfony/mercure-bundle": "*"
     },
     "require-dev": {
         "behat/behat": "^3.14",
@@ -93,7 +96,8 @@
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": false,
             "symfony/flex": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "symfony/runtime": true
         }
     },
     "extra": {
