@@ -44,3 +44,24 @@ sylius_twig_hooks:
             homepage_metatags:
                 template: "shop_metatags.html.twig"
                 priority: 150
+
+        'sylius_shop.homepage.index':
+            banner:
+                template: '@SyliusShop/homepage/banner.html.twig'
+                priority: 300
+            latest_deals:
+                component: 'sylius_shop:product:list'
+                props:
+                    limit: 4
+                    template: '@SyliusShop/product/common/list.html.twig'
+                configuration:
+                    title: 'sylius.homepage.latest_deals'
+                    test_attribute: 'latest-deals'
+                priority: 200
+            latest_products:
+                component: 'sylius_shop:product:list'
+                props:
+                    limit: 8
+                    template: '@SyliusShop/homepage/latest_products.html.twig'
+                priority: 0
+
