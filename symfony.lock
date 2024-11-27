@@ -163,6 +163,18 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.12"
     },
+    "friendsofsymfony/rest-bundle": {
+        "version": "3.7",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "3.0",
+            "ref": "3762cc4e4f2d6faabeca5a151b41c8c791bd96e5"
+        },
+        "files": [
+            "config/packages/fos_rest.yaml"
+        ]
+    },
     "gedmo/doctrine-extensions": {
         "version": "v2.4.36"
     },
@@ -530,6 +542,9 @@
     },
     "sylius/mailer-bundle": {
         "version": "v1.7.1"
+    },
+    "sylius/paypal-plugin": {
+        "version": "2.0.x-dev"
     },
     "sylius/registry": {
         "version": "v1.4.1"
