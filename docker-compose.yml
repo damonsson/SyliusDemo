@@ -1,0 +1,47 @@
+services:
+  php:
+    container_name: franken_php
+    build:
+      context: .
+    environment:
+      APP_ENV: "prod"
+      DATABASE_URL: "mysql://root:mysql@mysql/sylius_%kernel.environment%?charset=utf8mb4"
+      PHP_DATE_TIMEZONE: "Europe/Warsaw"
+      MERCURE_PUBLISHER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
+      MERCURE_SUBSCRIBER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
+      MERCURE_URL: "http://php/.well-known/mercure"
+      MERCURE_PUBLIC_URL: "http://localhost/.well-known/mercure"
+      MERCURE_JWT_SECRET: "!ChangeThisMercureHubJWTSecretKey!"
+      APP_RUNTIME: "Runtime\\FrankenPhpSymfony\\Runtime"
+      FRANKENPHP_CONFIG: "worker ./public/index.php"
+      SERVER_NAME: "franken2.sylius.com"
+    restart: always
+    ports:
+      - "80:80" # HTTP
+      - "443:443" # HTTPS
+      - "443:443/udp" # HTTP/3
+    volumes:
+      - .:/app
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - frankenphp
+
+  mysql:
+    container_name: franken_mysql
+    image: mysql:8.0
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+    ports:
+      - ${MYSQL_PORT:-3306}:3306
+    networks:
+      - frankenphp
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+networks:
+  frankenphp:
+    driver: bridge

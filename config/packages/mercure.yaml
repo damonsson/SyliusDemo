@@ -1,0 +1,7 @@
+mercure:
+    hubs:
+        default:
+            url: '%env(MERCURE_URL)%'
+            public_url: '%env(MERCURE_PUBLIC_URL)%'
+            jwt:
+                value: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjdXJlIjp7InB1Ymxpc2giOlsidGVzdCJdfSwiZXhwIjoxNzI0MjcyMzM0fQ.NhEvy3U8Jwff5jyNouJVFHREL9tX1r5bNokSJtRYFzM'
